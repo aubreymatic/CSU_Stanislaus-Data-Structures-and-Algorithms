@@ -1,0 +1,18 @@
+package twothreetree;
+
+public class TwoThreeTree<K extends Comparable<K>, V> {
+
+	private Node<K,V> root;
+	
+	public TwoThreeTree() {
+		root = null;
+	}
+	
+	private boolean lessThan(K key1, K key2) {
+		if (key1.compareTo(key2) < 0) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+}

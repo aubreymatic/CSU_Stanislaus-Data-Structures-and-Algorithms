@@ -1,0 +1,36 @@
+package priorityQueue;
+
+	public class MinHeap<T extends Comparable<T>> {
+	
+		private T[] heapArray;
+		private int maxSize;
+		private int currentSize;
+
+
+		public MinHeap(int maxSize) {
+			heapArray = (T[])new Comparable[maxSize];
+			this.maxSize = maxSize;
+			currentSize = 0;
+		}
+
+		public MinHeap(int maxSize, T[] values) {
+			heapArray = (T[])new Comparable[maxSize];
+			this.maxSize = maxSize;
+			currentSize = 0;
+	
+			createBTree(values);
+			buildHeap();
+		}
+		
+		public int size() {
+			return currentSize;
+		}
+		
+		private boolean isRoot(int index) {
+			if (index == 0) {
+				return true;
+			} else {
+				return false;
+			}
+		}
+}

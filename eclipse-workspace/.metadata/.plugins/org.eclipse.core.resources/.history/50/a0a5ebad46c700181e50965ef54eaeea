@@ -1,0 +1,58 @@
+package binaryTree;
+
+public class LBTree<T> implements BTree<T> {
+	
+	private Node<T> root;
+	
+	public LBTree() {
+		root = null;
+	}
+
+	@Override
+	public void add(T value) {
+		if (root == null) {
+			Node<T> node = new Node<T>(value);
+			root = node;
+			return;
+		}
+		add(root, value);
+	}
+	
+	private void add(Node<T> node, T value) {
+		if (node.left() == null) {
+			Node<T> child = new Node<T>(value);
+			node.setLeft(child);
+		} else if (node.right() == null) {
+			Node<T> child = new Node<T>(value);
+			node.setRight(child);
+		} else {
+			node = node.left();
+			add(node, value);
+		}
+	}
+
+	@Override
+	public void inOrder() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void preOrder() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void postOrder() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public int height() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+}

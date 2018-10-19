@@ -1,0 +1,12 @@
+		// debugging stack (make sure to comment out the other code in the method since it will throw an error)
+		//System.out.println("Debugging code is enabled.");
+		//System.out.println("The size of the stack is " + stackApp.length());
+		//System.out.println("Using isEmpty to see if the stack is empty or not: " + stackApp.isEmpty());
+		//System.out.println("Now popping each value in the stack.");
+		//System.out.println(stackApp.pop());
+		//System.out.println(stackApp.pop());
+		//System.out.println(stackApp.pop());
+		//System.out.println(stackApp.pop());
+		//System.out.println(stackApp.pop());
+		//System.out.println("Using isEmpty to see if the stack is empty or not: " + stackApp.isEmpty());
+		//System.out.println("");

@@ -1,0 +1,18 @@
+package twothreetree;
+
+public class TwoThreeTree<K extends Comparable<K>, V> {
+
+	private Node<K,V> root;
+	
+	public TwoThreeTree() {
+		root = null;
+	}
+
+	public Node<K,V> root() {
+		return root;
+	}
+
+	public void setRoot(Node<K,V> root) {
+		this.root = root;
+	}
+}

@@ -1,0 +1,58 @@
+package twothreetree;
+
+public class Node<K extends Comparable<K>, V> {
+
+	// first <key, value> pair
+	private K lkey;
+	private V lvalue;
+	
+	// second <key, value> pair
+	private K rkey;
+	private V rvalue;
+	
+	// links (left, middle, right)
+	private Node<K,V> left;
+	private Node<K,V> middle;
+	private Node<K,V> right;
+	
+	public Node(K lkey, V lvalue) {
+		this.lkey = lkey = lkey;
+		this.lvalue = lvalue;
+		
+		rkey = null;
+		rvalue = null;
+		left = middle = right = null;
+	}
+	
+	public K lkey() {
+		return lkey;
+	}
+	
+	public void setLkey(K lkey) {
+		this.lkey = lkey;
+	}
+	
+	public K rkey() {
+		return rkey;
+	}
+	
+	public void setRkey(K rkey) {
+		this.rkey = rkey;
+	}
+	
+	public V lvalue() {
+		return lvalue;
+	}
+	
+	public void setLvalue(V lvalue) {
+		this.lvalue = lvalue;
+	}
+	
+	public V rvalue() {
+		return rvalue;
+	}
+	
+	public void setRvalue(V rvalue) {
+		this.rvalue = rvalue;
+	}
+}

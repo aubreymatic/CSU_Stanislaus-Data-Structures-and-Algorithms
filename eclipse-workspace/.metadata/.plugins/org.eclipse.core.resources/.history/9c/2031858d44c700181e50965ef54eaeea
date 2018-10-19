@@ -1,0 +1,35 @@
+package binaryTree;
+
+public class LBTree<T> implements BTree<T> {
+
+	@Override
+	public void add(T value) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void inOrder() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void preOrder() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void postOrder() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public int height() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+}
