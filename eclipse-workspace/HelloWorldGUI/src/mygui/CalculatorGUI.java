@@ -75,6 +75,7 @@ public class CalculatorGUI {
 			public void actionPerformed(ActionEvent arg0) {
 				int num1, num2, ret;
 				String str;
+				Calculator calculator = new Calculator();
 				
 				// addition
 				str = tfNum1.getText();
@@ -83,7 +84,7 @@ public class CalculatorGUI {
 				str = tfNum2.getText();
 				num2 = Integer.parseInt(str);
 				
-				ret = num1 + num2;
+				ret = calculator.add(num1, num2);
 				
 				// set added number into lblMsg component
 				lblMsg.setText(String.valueOf(ret));
@@ -97,6 +98,7 @@ public class CalculatorGUI {
 			public void actionPerformed(ActionEvent arg0) {
 				int num1, num2, ret;
 				String str;
+				Calculator calculator = new Calculator();
 				
 				// get numbers
 				str = tfNum1.getText();
@@ -106,7 +108,7 @@ public class CalculatorGUI {
 				num2 = Integer.parseInt(str);
 				
 				// subtraction
-				ret = num1 - num2;
+				ret = calculator.subtract(num1, num2);
 				
 				// set result into lblMsg component
 				lblMsg.setText(String.valueOf(ret));
@@ -120,6 +122,7 @@ public class CalculatorGUI {
 			public void actionPerformed(ActionEvent e) {
 				int num1, num2, ret;
 				String str;
+				Calculator calculator = new Calculator();
 				
 				// get numbers
 				str = tfNum1.getText();
@@ -129,7 +132,7 @@ public class CalculatorGUI {
 				num2 = Integer.parseInt(str);
 				
 				// multiplication
-				ret = num1 * num2;
+				ret = calculator.multiply(num1, num2);
 				
 				// set result into lblMsg component
 				lblMsg.setText(String.valueOf(ret));
@@ -143,6 +146,7 @@ public class CalculatorGUI {
 			public void actionPerformed(ActionEvent e) {
 				int num1, num2, ret;
 				String str;
+				Calculator calculator = new Calculator();
 				
 				// get numbers
 				str = tfNum1.getText();
@@ -152,7 +156,7 @@ public class CalculatorGUI {
 				num2 = Integer.parseInt(str);
 				
 				// division
-				ret = num1 / num2;
+				ret = calculator.divide(num1, num2);
 				
 				// set result into lblMsg component
 				lblMsg.setText(String.valueOf(ret));
