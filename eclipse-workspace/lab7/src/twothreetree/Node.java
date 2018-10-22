@@ -81,4 +81,8 @@ public class Node<K extends Comparable<K>, V> {
 		this.right = right;
 		return right;
 	}
+	
+	public boolean isLeaf() {
+		return (left == null);
+	}
 }
