@@ -15,6 +15,9 @@ public class CalculatorGUI {
 	private JTextField tfNum1;
 	private JTextField tfNum2;
 	private JLabel lblMsg;
+	
+	// define Calculator object
+	private Calculator calculator;
 
 	/**
 	 * Launch the application.
@@ -36,6 +39,9 @@ public class CalculatorGUI {
 	 * Create the application.
 	 */
 	public CalculatorGUI() {
+		
+		// create Calculator object
+		calculator = new Calculator();
 		initialize();
 	}
 
@@ -75,7 +81,6 @@ public class CalculatorGUI {
 			public void actionPerformed(ActionEvent arg0) {
 				int num1, num2, ret;
 				String str;
-				Calculator calculator = new Calculator();
 				
 				// addition
 				str = tfNum1.getText();
@@ -98,7 +103,6 @@ public class CalculatorGUI {
 			public void actionPerformed(ActionEvent arg0) {
 				int num1, num2, ret;
 				String str;
-				Calculator calculator = new Calculator();
 				
 				// get numbers
 				str = tfNum1.getText();
@@ -122,7 +126,6 @@ public class CalculatorGUI {
 			public void actionPerformed(ActionEvent e) {
 				int num1, num2, ret;
 				String str;
-				Calculator calculator = new Calculator();
 				
 				// get numbers
 				str = tfNum1.getText();
@@ -146,7 +149,6 @@ public class CalculatorGUI {
 			public void actionPerformed(ActionEvent e) {
 				int num1, num2, ret;
 				String str;
-				Calculator calculator = new Calculator();
 				
 				// get numbers
 				str = tfNum1.getText();
