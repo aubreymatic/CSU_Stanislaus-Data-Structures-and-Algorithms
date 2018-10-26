@@ -1,5 +1,7 @@
 package sorting;
 
+//import priorityQueue.MinHeap;
+
 public class Sorting<T extends Comparable<T>> {
 
 	private boolean lessThan(T data1, T data2) {
