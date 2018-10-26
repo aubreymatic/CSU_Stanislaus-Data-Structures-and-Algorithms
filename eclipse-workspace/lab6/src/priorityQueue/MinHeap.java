@@ -160,6 +160,7 @@ package priorityQueue;
 			// get value of root node
 			T result = heapArray[0];
 			
+		if (currentSize > 1) {
 			// swap root with the last node
 			int lastIndex = currentSize - 1;
 			swap(0, lastIndex);
@@ -170,8 +171,12 @@ package priorityQueue;
 			// move down
 			moveDown(0);
 			
-			return result;
+		} else {
+			currentSize--;
 		}
+		
+		return result;
+	}
 		
 		private void createBTree(T[] values) {
 			for (int i=0; i < values.length; i++) {
