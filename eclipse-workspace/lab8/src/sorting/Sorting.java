@@ -3,20 +3,6 @@ package sorting;
 import priorityQueue.MinHeap;
 
 public class Sorting<T extends Comparable<T>> {
-	
-	public void heapSort(T[] arr) {
-		// create a min heap after heapify
-		MinHeap<T> heap = new MinHeap<T>(100, arr);
-		
-		/*
-		 	get smallest values repeatedly,
-		 	and put them back to array
-		*/
-		int index = 0;
-		while (heap.size() > 0) {
-			arr[index++] = heap.get();
-		}
-	}
 
 	private boolean lessThan(T data1, T data2) {
 		if (data1.compareTo(data2) < 0) {
@@ -72,13 +58,28 @@ public class Sorting<T extends Comparable<T>> {
 	}
 	
 	public void bubbleSort(T[] arr) {
-		
+		for (int i=0; i < arr.length; i++) {
+			for (int j=0; j < arr.length-1-i; j++) {
+				if (largerThan(arr[j], arr[j+1])) {
+					swap(arr, j, j+1);
+				}
+			}
+		}
 	}
 	
 	public void selectionSort(T[] arr) {
-		
+		int largestIndex = 0;
+		for (int i=0; i < arr.length; i++) {
+			largestIndex = 0;
+			for (int j=1; j < arr.length-i; j++) {
+				if (largerThan(arr[j], arr[largestIndex])) {
+					largestIndex = j;
+				}
+			}
+			swap(arr, largestIndex, arr.length-1-i);
+		}
 	}
-	/*
+	
 	private int getMaxIncrement(T[] arr) {
 		
 	}
@@ -94,5 +95,18 @@ public class Sorting<T extends Comparable<T>> {
 	private insertionSort(T[] arr, int start, int incr) {
 		
 	}
-	*/
+	
+	public void heapSort(T[] arr) {
+		// create a min heap after heapify
+		MinHeap<T> heap = new MinHeap<T>(100, arr);
+		
+		/*
+		 	get smallest values repeatedly,
+		 	and put them back to array
+		*/
+		int index = 0;
+		while (heap.size() > 0) {
+			arr[index++] = heap.get();
+		}
+	}
 }
