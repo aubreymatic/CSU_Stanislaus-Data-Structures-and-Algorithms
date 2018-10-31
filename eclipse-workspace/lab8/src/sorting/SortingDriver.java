@@ -11,6 +11,11 @@ public class SortingDriver {
 		// insertion sort
 		obj.insertionSort(nums);
 		obj.show(nums, "insertionSort");
+		
+		// heap sort
+		nums = new Integer[] {5, 1, 4, 2};
+		obj.heapSort(nums);
+		obj.show(nums, "heapSort     ");
 	}
 
 }

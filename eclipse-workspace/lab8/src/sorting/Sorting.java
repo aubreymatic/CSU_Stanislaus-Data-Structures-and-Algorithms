@@ -1,8 +1,22 @@
 package sorting;
 
-//import priorityQueue.MinHeap;
+import priorityQueue.MinHeap;
 
 public class Sorting<T extends Comparable<T>> {
+	
+	public void heapSort(T[] arr) {
+		// create a min heap after heapify
+		MinHeap<T> heap = new MinHeap<T>(100, arr);
+		
+		/*
+		 	get smallest values repeatedly,
+		 	and put them back to array
+		*/
+		int index = 0;
+		while (heap.size() > 0) {
+			arr[index++] = heap.get();
+		}
+	}
 
 	private boolean lessThan(T data1, T data2) {
 		if (data1.compareTo(data2) < 0) {
@@ -64,7 +78,7 @@ public class Sorting<T extends Comparable<T>> {
 	public void selectionSort(T[] arr) {
 		
 	}
-	
+	/*
 	private int getMaxIncrement(T[] arr) {
 		
 	}
@@ -80,4 +94,5 @@ public class Sorting<T extends Comparable<T>> {
 	private insertionSort(T[] arr, int start, int incr) {
 		
 	}
+	*/
 }
