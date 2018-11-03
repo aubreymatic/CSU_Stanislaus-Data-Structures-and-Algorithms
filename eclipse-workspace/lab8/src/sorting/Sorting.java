@@ -20,6 +20,7 @@ public class Sorting<T extends Comparable<T>> {
 		}
 	}
 	
+	@SuppressWarnings("unused")
 	private boolean equalTo(T data1, T data2) {
 		if (data1.compareTo(data2) == 0) {
 			return true;
@@ -43,8 +44,8 @@ public class Sorting<T extends Comparable<T>> {
 	}
 	
 	public void insertionSort(T[] arr) {
-		for (int i = 1; i < arr.length; i++) {
-			for (int j = i; j > 0; j--) {
+		for (int i=1; i < arr.length; i++) {
+			for (int j=i; j > 0; j--) {
 				if (lessThan(arr[j], arr[j-1])) {
 					swap(arr, j, j-1);
 				} else {
@@ -81,19 +82,38 @@ public class Sorting<T extends Comparable<T>> {
 	}
 	
 	private int getMaxIncrement(T[] arr) {
-		
+		int base=2, exponent=0;
+		while (Math.pow(base, exponent) < arr.length) {
+			exponent++;
+		}
+		return (int)Math.pow(base, exponent-1);
 	}
 	
 	public void shellSort(T[] arr) {
-		
+		System.out.println("max increment: " + getMaxIncrement(arr));
+		for (int i=getMaxIncrement(arr); i >= 1; i /= 2) {
+			System.out.println("increment    : " + i);
+			insertionSort(arr, i);
+		}
 	}
 	
-	private insertionSort(T[] arr, int incr) {
-		
+	private void insertionSort(T[] arr, int incr) {
+		for (int start=0; start < incr; start++) {
+			insertionSort(arr, start, incr);
+		}
+		show(arr, "shellSort    ");
 	}
 	
-	private insertionSort(T[] arr, int start, int incr) {
-		
+	private void insertionSort(T[] arr, int start, int incr) {
+		for (int i=start+incr; i < arr.length; i += incr) {
+			for (int j=i; j > start; j -= incr) {
+				if (lessThan(arr[j], arr[j-incr])) {
+					swap(arr, j, j-incr);
+				} else {
+					break;
+				}
+			}
+		}
 	}
 	
 	public void heapSort(T[] arr) {
