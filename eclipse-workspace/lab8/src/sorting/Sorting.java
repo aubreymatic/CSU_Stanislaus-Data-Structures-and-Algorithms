@@ -129,4 +129,152 @@ public class Sorting<T extends Comparable<T>> {
 			arr[index++] = heap.get();
 		}
 	}
+	
+	public void mergeSort(T[] arr) {
+		@SuppressWarnings("unchecked")
+		T[] temp = (T[])new Comparable[arr.length];
+		mergeSort(arr, temp, 0, arr.length-1);
+	}
+	
+	private void mergeSort(T[] arr, T[] temp,
+			int first, int last) {
+		
+		/*------------------------
+		  Base case
+		 -------------------------*/
+		if (first == last) {
+			return;
+		}
+		
+		/*------------------------
+		  General function
+		 -------------------------*/
+		
+		// going down: dividing
+		int mid = (first+last)/2;
+		mergeSort(arr, temp, first, mid);
+		mergeSort(arr, temp, mid+1, last);
+		
+		// going up: merging
+		for (int i=first; i <= last; i++) {
+			temp[i] = arr[i];
+		}
+		
+		int left = first;
+		int right = mid+1;
+		for (int i=first; i <= last; i++) {
+			if (isLeftEmpty(left, mid)) {
+				arr[i] = temp[right++];
+			} else if (isRightEmpty(right, last)) {
+				arr[i] = temp[left++];
+			} else {
+				if (lessThan(temp[left], temp[right]) ||
+						equalTo(temp[left], temp[right])) {
+					arr[i] = temp[left++];
+				} else {
+					arr[i] = temp[right++];
+				}
+			}
+		}
+	}
+	
+	// is left subset empty?
+	private boolean isLeftEmpty(int index, int mid) {
+		if (index == mid+1) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+	
+	// is right subset empty?
+	private boolean isRightEmpty(int index, int end) {
+		if (index > end) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+	
+	public void quickSort(T[] arr) {
+		quickSort(arr, 0, arr.length-1);
+	}
+	
+	private void quickSort(T[] arr, int first, int last) {
+		// STEP1. switch pivot with the last element
+		int pivotIndex = pivot(arr, first, last);
+		swap(arr, pivotIndex, last);
+		
+		/*
+		 STEP2. partition
+		 		move data (less than pivot) to the left
+		 		move data (larger than pivot) to the right
+		 */
+		int partitionIndex = partition(arr, first, last-1, arr[last]);
+		swap(arr, partitionIndex, last);
+		
+		/*
+		 STEP3. quick sort with left subset
+		 						(with more than one data)
+		 */
+		if (isLeftMoreThanOne(first, partitionIndex, last)) {
+			quickSort(arr, first, partitionIndex-1);
+		}
+		
+		/*
+		 STEP4. quick sort with right subset
+		 						(with more than one data)
+		 */
+		if (isRightMoreThanOne(first, partitionIndex, last)) {
+			quickSort(arr, partitionIndex+1, last);
+		}
+	}
+	
+	private int pivot(T[] arr, int first, int last) {
+		return (first+last)/2;
+	}
+	
+	private int partition(T[] arr,
+			int left, int right, T pivot) {
+		
+		while (left <= right) {
+			
+			// keep moving to the right and
+			// find left subset with smaller data than pivot
+			while (lessThan(arr[left], pivot)) {
+				left++;
+			}
+			
+			// keep moving to the left and
+			// find right subset with larger
+			// (or equal) data than pivot
+			while ((right >= left) &&
+					largerThan(arr[right], pivot)) {
+				right--;
+			}
+			
+			if (right > left) {
+				swap(arr, left, right);
+			}
+		}
+		return left;
+	}
+	
+	private boolean isLeftMoreThanOne(int first,
+			int partitionIndex, int last) {
+		if ((partitionIndex - first) > 1) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+	
+	private boolean isRightMoreThanOne(int first,
+			int partitionIndex, int last) {
+		if ((last - partitionIndex) > 1) {
+			return true;
+		} else {
+			return false;
+		}
+	}
 }

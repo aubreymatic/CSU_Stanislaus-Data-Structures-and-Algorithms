@@ -32,6 +32,18 @@ public class SortingDriver {
 		nums = new Integer[] {5, 1, 4, 2};
 		obj.heapSort(nums);
 		obj.show(nums, "heapSort     ");
+		
+		// merge sort
+		nums = new Integer[] {5, 1, 4, 2};
+		obj.mergeSort(nums);
+		obj.show(nums, "mergeSort    ");
+		System.out.println();
+		
+		// quick sort
+		nums = new Integer[] {5, 1, 4, 2};
+		obj.quickSort(nums);
+		obj.show(nums, "quickSort    ");
+		System.out.println();
 	}
 
 }
