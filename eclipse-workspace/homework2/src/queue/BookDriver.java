@@ -13,6 +13,7 @@ public class BookDriver {
 		// put books into queue
 		try {
 			File file = new File("books.csv");
+			@SuppressWarnings("resource")
 			Scanner in = new Scanner(file);
 			while (in.hasNext()) {
 				String line = in.nextLine();

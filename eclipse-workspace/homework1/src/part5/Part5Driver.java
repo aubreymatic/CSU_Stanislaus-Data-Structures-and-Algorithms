@@ -13,6 +13,7 @@ public class Part5Driver {
 		// load book information into a list
 		try {
 			File file = new File("books.csv");
+			@SuppressWarnings("resource")
 			Scanner in = new Scanner(file);
 			while (in.hasNext()) {
 				String line = in.nextLine();

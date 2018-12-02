@@ -4,6 +4,7 @@ public class StanBankAccount extends BankAccount {
 	
 	private String firstName, lastName;
 	private String address;
+	@SuppressWarnings("unused")
 	private int accountNo;
 	private double balance;
 	

@@ -12,6 +12,11 @@ public class BST<K extends Comparable<K>, V> {
 		numOfNodes = 0;
 	}
 	
+	public void clear() {
+		root       = null;
+		numOfNodes = 0;
+	}
+	
 	public int numOfNodes() {
 		return numOfNodes;
 	}
@@ -32,6 +37,7 @@ public class BST<K extends Comparable<K>, V> {
 		}
 	}
 	
+	@SuppressWarnings("unused")
 	private boolean equalTo(K key1, K key2) {
 		if (key1.compareTo(key2) == 0) {
 			return true;
@@ -76,6 +82,7 @@ public class BST<K extends Comparable<K>, V> {
 		return node;
 	}
 	
+	@SuppressWarnings("unused")
 	private Node<K,V> findMin(Node<K,V> node) {
 		if (node == null) {
 			return null;
@@ -180,9 +187,28 @@ public class BST<K extends Comparable<K>, V> {
 	private void find(Node<K,V> node, K smallest, 
 			K largest, ArrayList<V> values) {
 		
-		if () {
+		if (node == null) { // base case
 			
+			return; 
+		}
+		
+		if (largerThan(node.key(), smallest)) {
+			
+			// goes down the left of the tree, when node key is larger than the smallest of the range.
+			find(node.left(), smallest, largest, values);
+		}
+		
+		if (node.key().compareTo(smallest) >= 0 && 
+				node.key().compareTo(largest) <= 0) {
+			
+			// Adds the node key's value into the array list, when it is within the range.
+			values.add(node.value());
+		}
+		
+		if (lessThan(node.key(), largest)) {
+			
+			// goes down the right of the tree, when node key is smaller than the largest of the range.
+			find(node.right(), smallest, largest, values);
 		}
 	}
-	
 }

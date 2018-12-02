@@ -74,6 +74,7 @@ public class BST<T extends Comparable<T>> {
 		return node;
 	}
 	
+	@SuppressWarnings("unused")
 	private Node<T> findMin(Node<T> node) {
 		if (node == null) {
 			return null;

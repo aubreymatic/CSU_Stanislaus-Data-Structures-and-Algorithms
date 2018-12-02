@@ -48,6 +48,7 @@ public class Conversion {
 		output += data + " ";
 	}
 	
+	@SuppressWarnings("unused")
 	private double doMath(String operator, double num1, double num2) {
 		double result = 0;
 		if (operator.equals("+")) {

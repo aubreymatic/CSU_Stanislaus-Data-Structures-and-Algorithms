@@ -20,7 +20,6 @@ public class Sorting<T extends Comparable<T>> {
 		}
 	}
 	
-	@SuppressWarnings("unused")
 	private boolean equalTo(T data1, T data2) {
 		if (data1.compareTo(data2) == 0) {
 			return true;

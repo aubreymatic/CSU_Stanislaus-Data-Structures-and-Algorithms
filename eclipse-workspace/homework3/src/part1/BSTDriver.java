@@ -5,6 +5,7 @@ public class BSTDriver {
 	public static void main(String[] args) {
 		
 		String isbn;
+		@SuppressWarnings("unused")
 		Book book = null;
 		
 		// create binary search tree

@@ -25,6 +25,38 @@ public class Book {
 		this.isbn = isbn;
 	}
 	
+	public String title() {
+		return title;
+	}
+	
+	public void setTitle(String title) {
+		this.title = title;
+	}
+	
+	public  String author() {
+		return author;
+	}
+	
+	public void setAuthor(String author) {
+		this.author = author;
+	}
+	
+	public double price() {
+		return price;
+	}
+	
+	public void setPrice(double price) {
+		this.price = price;
+	}
+	
+	public int year() {
+		return year;
+	}
+	
+	public void setYear(int year) {
+		this.year = year;
+	}
+	
 	public String toString() {
 		String result = "ISBN: " + isbn + ", ";
 		result		 += "Title: " + title + ", ";
