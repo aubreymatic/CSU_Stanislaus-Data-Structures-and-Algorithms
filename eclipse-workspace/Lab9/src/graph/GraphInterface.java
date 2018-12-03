@@ -46,17 +46,26 @@ public interface GraphInterface {
 	Node getNode(int id);
 	
 	/**
+	 * Add a directional edge between two nodes
 	 * 
-	 * @param fromId
-	 * @param toId
-	 * @return
+	 * @param fromId id of the node starting the edge
+	 * @param toId id of the node ending the edge
+	 * @return if an edge is added, it returns true.
+	 * 		   if an edge is not added with other reasons,
+	 *         it returns false.
+	 *         The reasons can be
+	 *         1) any node does not exist.
+	 *         2) the edge already exist.
 	 */
 	boolean addEdge(int fromId, int toId);
 	
 	/**
+	 * Remove a node from graph 
+	 * It removes all edges of the node.
 	 * 
-	 * @param id
-	 * @return
+	 * @param id id of the node to be removed
+	 * @return if the node with id is removed correctly,
+	 *         it returns true. Otherwise, it returns false.
 	 */
 	boolean removeNode(int id);
 	
