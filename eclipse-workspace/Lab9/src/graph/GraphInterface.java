@@ -70,36 +70,43 @@ public interface GraphInterface {
 	boolean removeNode(int id);
 	
 	/**
+	 * Remove a directional edge between two nodes
 	 * 
-	 * @param fromId
-	 * @param toId
-	 * @return
+	 * @param fromId id of node starting the edge
+	 * @param toId id of node ending the edge
+	 * @return if edge id removed correctly, it returns true.
+	 * 		   Otherwise, it returns false.
 	 */
 	boolean removeEdge(int fromId, int toId);
 	
 	/**
+	 * Returns true if the directional edge
+	 * exists between two nodes
 	 * 
-	 * @param fromId
-	 * @param toId
-	 * @return
+	 * @param fromId id of node starting the edge
+	 * @param toId id of node ending the edge
+	 * @return true if the edge exists between two nodes.
+	 * 	       Otherwise, it returns false.
 	 */
 	boolean hadEdge(int fromId, int toId);
 	
 	/**
+	 * Returns id of neighbors
 	 * 
-	 * @param id
-	 * @return
+	 * @param id id of a node
+	 * @return node ids of neighbors.
 	 */
 	Integer[] neighbors(int id);
 	
 	/**
+	 * Return information of the graph
 	 * 
-	 * @return
+	 * @return information of the graph
 	 */
 	String toString();
 	
 	/**
-	 * 
+	 * Print information of the graph
 	 */
 	void show();
 }
