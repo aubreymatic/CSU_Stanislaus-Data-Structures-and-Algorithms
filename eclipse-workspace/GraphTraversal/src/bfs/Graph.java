@@ -155,5 +155,9 @@ public class Graph implements GraphInterface {
 	public void show() {
 		System.out.println(toString());
 	}
-
+	
+	public ArrayList<Node> nodes() {
+		return nodes;
+	}
+	
 }

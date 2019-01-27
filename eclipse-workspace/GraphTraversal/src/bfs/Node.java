@@ -7,6 +7,10 @@ public class Node {
 	private int id;
 	private ArrayList<Integer> neighbors;
 	
+	private COLOR color;	/* WHITE, GRAY, BLACK */
+	private int parent;
+	private int distance;
+	
 	public Node(int id) {
 		this.id = id;
 		neighbors = new ArrayList<Integer>();
@@ -64,5 +68,29 @@ public class Node {
 	
 	public void show() {
 		System.out.println(toString());
+	}
+
+	public COLOR color() {
+		return color;
+	}
+
+	public void setColor(COLOR color) {
+		this.color = color;
+	}
+
+	public int parent() {
+		return parent;
+	}
+
+	public void setParent(int parent) {
+		this.parent = parent;
+	}
+
+	public int distance() {
+		return distance;
+	}
+
+	public void setDistance(int distance) {
+		this.distance = distance;
 	}
 }
